@@ -1,0 +1,11 @@
+body {
+    background-image: url('/static/poster.jpg'); /* Update with your image file path */
+    background-repeat: no-repeat;
+    background-size: cover; /* Adjust this property to control how the image covers the background */
+    color: white; /* Text color */
+}
+
+/* Add any additional styling as needed */
+
+
+/* <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"> */

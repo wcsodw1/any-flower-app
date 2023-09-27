@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask App</title>
+</head>
+<body>
+    <h1>Any * Flower</h1>
+
+    <h2>Enter Item Data</h2>
+    <form method="POST">
+        <div class="block">
+            <label for="item_name">Item Name:</label>
+            <input type="text" id="item_name" name="item_name">
+            <select id="item_name_dropdown" name="item_name_dropdown">
+                <option value="">Select an Item</option>
+                <option value="一般花材">一般花材</option>
+                <option value="Option 2">Option 2</option>
+                <option value="Option 3">Option 3</option>
+            </select>
+        </div>
+        <div class="block">
+            <label for="dollars">Dollars:</label>
+            <input type="number" id="dollars" name="dollars">
+        </div>
+        <div class="block">
+            <label for="signer">Signer:</label>
+            <input type="text" id="signer" name="signer">
+            <select id="signer_dropdown" name="signer_dropdown">
+                <option value="">Select a Signer</option>
+                <option value="昕棠">昕棠</option>
+                <option value="Option B">Option B</option>
+                <option value="Option C">Option C</option>
+            </select>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Visualize Total Dollars</h2>
+    <form method="POST">
+        <label for="timestamp_range">Select Timestamp Range:</label>
+        <select id="timestamp_range" name="timestamp_range">
+            <option value="1_day">One Day</option>
+            <option value="1_week">One Week</option>
+            <option value="1_year">One Year</option>
+        </select>
+        <button type="submit">Get Summation</button>
+    </form>
+
+    {% if result %}
+    <h3>Total Dollars:</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Timestamp</th>
+                <th>Total Dollars</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in result %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>${{ row[1] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+</body>
+
+
+</html>
