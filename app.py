@@ -16,60 +16,6 @@ db_config = {
     "database": "anyFlower",
 }
 
-# @app.route('/', methods=['GET', 'POST'])
-# def index():
-#     item_name = None
-#     dollars = None
-#     signer = None
-#     summation = None
-#     query = None  # Initialize query with a default value
-
-#     if request.method == 'POST':
-#         item_name = request.form.get('item_name')
-#         dollars = request.form.get('dollars')
-#         signer = request.form.get('signer')
-#         timestamp_range = request.form.get('timestamp_range')
-
-#         try:
-#             # Connect to the MySQL database
-#             conn = mysql.connector.connect(**db_config)
-#             cursor = conn.cursor()
-
-#             # Insert the user's input into the database (assuming you have a 'FlowerData' table)
-#             if item_name and dollars and signer:
-#                 insert_query = "INSERT INTO FlowerData (item_name, dollars, signer) VALUES (%s, %s, %s);"
-#                 cursor.execute(insert_query, (item_name, dollars, signer))
-#                 conn.commit()
-
-#             if timestamp_range == '1_day':
-#                 # Calculate summation for one day (adjust the timestamp filter accordingly)
-#                 query = "SELECT SUM(dollars) FROM FlowerData WHERE timestamp >= CURDATE();"
-#             elif timestamp_range == '1_week':
-#                 # Calculate summation for one week (adjust the timestamp filter accordingly)
-#                 query = "SELECT SUM(dollars) FROM FlowerData WHERE timestamp >= CURDATE() - INTERVAL 1 WEEK;"
-#             elif timestamp_range == '1_year':
-#                 # Calculate summation for one year (adjust the timestamp filter accordingly)
-#                 query = "SELECT SUM(dollars) FROM FlowerData WHERE timestamp >= CURDATE() - INTERVAL 1 YEAR;"
-
-#             cursor.execute(query)
-#             summation = cursor.fetchone()[0]
-
-#         except mysql.connector.Error as e:
-#             print(f"Error: {e}")
-#         finally:
-#             if cursor:
-#                 cursor.close()
-#             if conn:
-#                 conn.close()
-
-#     return render_template(
-#         'index.html',
-#         item_name=item_name,
-#         dollars=dollars,
-#         signer=signer,
-#         summation=summation
-#     )
-
 @app.route('/', methods=['GET', 'POST'])
 def index():
 
