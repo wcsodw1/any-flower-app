@@ -11,24 +11,23 @@
     <h2>Enter Item Data</h2>
     <form method="POST">
         <div class="block">
-            <label for="item_name">Item Name:</label>
+            <label for="item_name">Item Name(項目名稱):</label>
             <input type="text" id="item_name" name="item_name">
             <select id="item_name_dropdown" name="item_name_dropdown">
-                <option value="">Select an Item</option>
-                <option value="一般花材">一般花材</option>
-                <option value="Option 2">Option 2</option>
-                <option value="Option 3">Option 3</option>
+                <option value="">Select an Item(選擇預設項目)</option>
+                <option value="零售鮮花花材">零售鮮花花材</option>
+                <option value="零售乾燥花花材">零售乾燥花花材</option>
             </select>
         </div>
         <div class="block">
-            <label for="dollars">Dollars:</label>
+            <label for="dollars">Dollars(金額):</label>
             <input type="number" id="dollars" name="dollars">
         </div>
         <div class="block">
-            <label for="signer">Signer:</label>
+            <label for="signer">Signer(紀錄者):</label>
             <input type="text" id="signer" name="signer">
             <select id="signer_dropdown" name="signer_dropdown">
-                <option value="">Select a Signer</option>
+                <option value="">Select a Signer(選擇紀錄者)</option>
                 <option value="昕棠">昕棠</option>
                 <option value="Option B">Option B</option>
                 <option value="Option C">Option C</option>
@@ -37,13 +36,13 @@
         <button type="submit">Submit</button>
     </form>
 
-    <h2>Visualize Total Dollars</h2>
+    <h2>Income(收入)</h2>
     <form method="POST">
-        <label for="timestamp_range">Select Timestamp Range:</label>
+        <label for="timestamp_range">Select Timestamp Range(選擇日期區間):</label>
         <select id="timestamp_range" name="timestamp_range">
-            <option value="1_day">One Day</option>
-            <option value="1_week">One Week</option>
-            <option value="1_year">One Year</option>
+            <option value="1_day">One Day(一日總收入)</option>
+            <option value="1_week">One Week(一週總收入)</option>
+            <option value="1_year">One Year(一年總收入)</option>
         </select>
         <button type="submit">Get Summation</button>
     </form>
