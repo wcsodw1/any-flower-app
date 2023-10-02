@@ -1,2 +1,1 @@
-web: gunicorn any-flower-app:app
-
+web: python app.py
