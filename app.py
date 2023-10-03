@@ -23,9 +23,6 @@ def index():
 
     if request.method == 'POST':
 
-        # Initialize a cursor
-        cursor = db_config.cursor()
-
         item_name = request.form.get('item_name')
         dollars = request.form.get('dollars')
         signer = request.form.get('signer')
