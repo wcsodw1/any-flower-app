@@ -70,17 +70,18 @@ def index():
 
             cursor.execute(query)
             result = cursor.fetchall()
+            print("result : ",result)
 
         except mysql.connector.Error as e:
             print(f"Error: {e}")
-        finally:
-            if cursor:
-                cursor.close()
-            if conn:
-                conn.close()
+        # finally:
+        #     if cursor:
+        #         cursor.close()
+        #     if conn:
+        #         conn.close()
         return render_template(
             'index.html',
-            result=result,
+            # result=result,
             item_name_dropdown=item_name_dropdown,
             signer_dropdown=signer_dropdown,
         )
