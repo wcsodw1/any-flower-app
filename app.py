@@ -69,15 +69,15 @@ def index():
                 query = "SELECT YEAR(timestamp) AS year, SUM(dollars) AS total FROM ItemDataTable WHERE YEAR(timestamp) = YEAR(CURDATE()) GROUP BY year;"
 
             cursor.execute(query)
-            result = cursor.fetchall()
-            print("result : ",result)
+            q_result = cursor.fetchall()
+            print("result : ",q_result)
 
         except mysql.connector.Error as e:
             print(f"Error: {e}")
 
         return render_template(
             'index.html',
-            # result=result,
+            result=q_result,
             item_name_dropdown=item_name_dropdown,
             signer_dropdown=signer_dropdown,
         )
