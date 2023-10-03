@@ -77,7 +77,7 @@ def index():
 
         return render_template(
             'index.html',
-            # result=result,
+            result=q_result,
             item_name_dropdown=item_name_dropdown,
             signer_dropdown=signer_dropdown,
         )
