@@ -72,11 +72,11 @@ def index():
 
         except mysql.connector.Error as e:
             print(f"Error: {e}")
-        finally:
-            if cursor:
-                cursor.close()
-            if conn:
-                conn.close()
+        # finally:
+        #     if cursor:
+        #         cursor.close()
+        #     if conn:
+        #         conn.close()
         return render_template(
             'index.html',
             result=result,
