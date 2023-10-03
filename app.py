@@ -20,9 +20,12 @@ db_config = {
 def index():
 
     query = None  # Initialize query with a default value
-    conn = None
 
     if request.method == 'POST':
+
+        # Initialize a cursor
+        cursor = db_config.cursor()
+
         item_name = request.form.get('item_name')
         dollars = request.form.get('dollars')
         signer = request.form.get('signer')
