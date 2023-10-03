@@ -11,7 +11,7 @@ app = Flask(__name__)
 db_config = {
     "host": "localhost",
     "user": "root",
-    "port":"3306",
+    "port":3306,
     "password": "wcsodw1Mysql",  # Enter your MySQL password here
     "database": "anyFlower",
 }
