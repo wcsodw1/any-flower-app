@@ -7,14 +7,26 @@ from datetime import datetime, timedelta
 
 app = Flask(__name__)
 
+branch = "production"
 # MySQL database configuration
-db_config = {
-    "host": "localhost",
-    "user": "root",
-    "port":3306,
-    "password": "wcsodw1Mysql",  # Enter your MySQL password here
-    "database": "anyFlower",
-}
+
+if branch == "production" : 
+    db_config = {
+        "host": "us-cluster-east-01.k8s.cleardb.net",
+        "user": "b18d41c3b2d8db", # username
+        "port":3306,
+        "password": "e25efe5a",  # Enter your MySQL password here
+        "database": "heroku_30ff1240d980ded",
+    }
+
+else : 
+    db_config = {
+        "host": "localhost",
+        "user": "root",
+        "port":3306,
+        "password": "wcsodw1Mysql",  # Enter your MySQL password here
+        "database": "anyFlower",
+    }
 
 @app.route('/', methods=['GET', 'POST'])
 def index():

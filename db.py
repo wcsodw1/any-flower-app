@@ -2,16 +2,24 @@
 import mysql.connector
 
 # MySQL database configuration
-db_config = {
-    "host": "localhost",
-    "user": "root",
-    "password": "wcsodw1Mysql",  # Enter your MySQL password here
-    "database": "anyFlower",  # Change to your desired database name
+# db_config = {
+#     "host": "localhost",
+#     "user": "root",
+#     "password": "wcsodw1Mysql",  # Enter your MySQL password here
+#     "database": "anyFlower",  # Change to your desired database name
+# }
+
+heroku_db_config = {
+    "host": "us-cluster-east-01.k8s.cleardb.net",
+    "user": "b18d41c3b2d8db", # username
+    "port":3306,
+    "password": "e25efe5a",  # Enter your MySQL password here
+    "database": "heroku_30ff1240d980ded",
 }
 
 
 # Create a connection to the MySQL server
-connection = mysql.connector.connect(**db_config)
+connection = mysql.connector.connect(**heroku_db_config)
 
 # Create a cursor object to execute SQL queries
 cursor = connection.cursor()
