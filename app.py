@@ -17,6 +17,7 @@ if branch == "production" :
         "port":3306,
         "password": "e25efe5a",  # Enter your MySQL password here
         "database": "heroku_30ff1240d980ded",
+        "charset": "utf8"
     }
 
 else : 
