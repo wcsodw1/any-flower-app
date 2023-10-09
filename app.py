@@ -6,8 +6,8 @@ print("MySQL connector installed successfully.")
 from datetime import datetime, timedelta
 
 app = Flask(__name__)
-
 branch = "production"
+
 # MySQL database configuration
 
 if branch == "production" : 
@@ -35,7 +35,6 @@ def index():
     query = None  # Initialize query with a default value
 
     if request.method == 'POST':
-
         item_name = request.form.get('item_name')
         dollars = request.form.get('dollars')
         signer = request.form.get('signer')

@@ -17,7 +17,6 @@ heroku_db_config = {
     "database": "heroku_30ff1240d980ded",
 }
 
-
 # Create a connection to the MySQL server
 connection = mysql.connector.connect(**heroku_db_config)
 
